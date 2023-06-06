@@ -2,26 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply font-orbitron
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .card {
+    @apply bg-primary-900 border-b border-primary-500 rounded shadow-3xl
+  }
+  .second-card {
+    @apply rounded shadow-3xl w-full md:w-[340px] min-h-[95px] md:h-[160px]
+     flex flex-col justify-between
+  }
+  .button{
+    @apply w-full uppercase
+    text-xsm leading-5 text-white font-bold rounded-sm text-center py-3
+  }
+  .card4{
+    @apply mt-5 first:mt-0 bg-primary-900 px-4 py-2.5 border-b border-info-dark rounded
+  }
+
 }
+
+.text-shadow-white{
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-drop-shadow {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.mint-bg {
+  background: linear-gradient(180deg, #62A1FF 0%, #93B9FF 50%, #93B9FF 53.12%, #93B9FF 99.98%, #C4D2FF 99.99%, rgba(98, 161, 255, 0) 100%);
+}
+
+.claim-bg {
+  background: linear-gradient(0deg, #62A1FF 0%, #93B9FF 50%, #93B9FF 53.12%, #93B9FF 99.98%, #C4D2FF 99.99%, rgba(98, 161, 255, 0) 100%);
+}
+
+.modal-box-shadow{
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.text-stroke-white{
+  text-shadow:
+    1px 1px 0 #fff,
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+.text-stroke-black{
+  text-shadow:
+    1px 1px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.text-stroke-connect{
+  text-shadow:
+    1px 1px 0 #164E7D,
+    -1px -1px 0 #164E7D,  
+    1px -1px 0 #164E7D,
+    -1px 1px 0 #164E7D,
+    1px 1px 0 #164E7D;
+}
+
+@media only screen and (min-width: 640px) {
+  .text-stroke-white, .text-stroke-connect, .text-stroke-black{
+    text-shadow: none;
+  }
+
+}
+
+
+
+/* 
+background: #AFD3E2;
+border-bottom: 1px solid #19A7CE;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 4px; */
